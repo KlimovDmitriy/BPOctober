@@ -1,0 +1,51 @@
+
+    <!-- RD Navbar-->
+    <div class="rd-navbar-wrap rd-navbar-absolute">
+        <nav class="rd-navbar rd-navbar-thin" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-fixed" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="46px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+                <button class="rd-navbar-collapse-toggle rd-navbar-fixed-element-2" data-rd-navbar-toggle=".rd-navbar-collapse"><span></span></button>
+                <div class="rd-navbar-main">
+                    <!-- RD Navbar Panel-->
+                    <div class="rd-navbar-panel">
+                        <!-- RD Navbar Toggle-->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle="#rd-navbar-nav-wrap-1, #rd-navbar-hidden-1"><span></span></button>
+                        <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo-default-398x45.png'|theme }}" alt="" width="199" height="22"/></a>
+                        <div class="rd-navbar-block" id="rd-navbar-hidden-1">
+                            <div class="rd-navbar-collapse">
+                                <ul class="list-inline-bordered rd-navbar-list">
+                                    <li><span class="icon mdi mdi-comment-text-outline"></span><a href="{{ 'contacts'|page }}">Contact us</a></li>
+                                    <li><span class="icon mdi mdi-cellphone-android"></span><a href="tel:#">+1-800-456-6743</a></li>
+                                </ul>
+                            </div>
+                            <button class="rd-navbar-search-toggle" data-rd-navbar-toggle="#rd-navbar-search-1"><span></span></button>
+                        </div>
+                    </div>
+                    <!-- RD Navbar Search-->
+                    <div class="rd-navbar-search" id="rd-navbar-search-1">
+                        <form class="rd-search" action="#" data-search-live="rd-search-results-live-1" method="GET">
+                            <div class="form-wrap">
+                                <label class="form-label" for="rd-navbar-search-form-input-1">Search...</label>
+                                <input class="form-input rd-navbar-search-form-input" id="rd-navbar-search-form-input-1" type="text" name="s" autocomplete="off">
+                                <div class="rd-search-results-live" id="rd-search-results-live-1"></div>
+                            </div>
+                            <button class="rd-search-form-submit fa-search" type="submit"></button>
+                        </form>
+                    </div>
+                    <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
+                        <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo-default-398x45.png'|theme }}" alt="" width="199" height="22"/></a>
+                        <!-- RD Navbar Nav-->
+                        <ul class="rd-navbar-nav">
+                            <li class="rd-nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'home'|page }}">Home</a>
+                            </li>
+                            <li class="rd-nav-item {% if this.page.id == 'our-founder' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'our-founder'|page }}">Our Founder</a>
+                            </li>
+                            <li class="rd-nav-item {% if this.page.id == 'typography' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'typography'|page }}">Typography</a>
+                            </li>
+                            <li class="rd-nav-item {% if this.page.id == 'contacts' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'contacts'|page }}">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
