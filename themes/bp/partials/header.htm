@@ -1,3 +1,8 @@
+[breadcrumbs]
+main-ol-class = "breadcrumbs-custom-path"
+active-class = "active"
+disabled-class = "disabled"
+==
 <header class="section page-header">
     <div class="rd-navbar-wrap">
         <nav class="rd-navbar rd-navbar-minimal" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed"
@@ -42,18 +47,17 @@
         </nav>
     </div>
 </header>
+{% if this.page.id != 'home' %}
 <!-- Breadcrumbs -->
-<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(themes/bp/assets/images/breadcrumbs-image-1.jpg);">
+<section class="breadcrumbs-custom bg-image context-dark" style="background-image: url(/themes/bp/assets/images/breadcrumbs-image-1.jpg);">
     <div class="breadcrumbs-custom-inner">
         <div class="container breadcrumbs-custom-container">
             <div class="breadcrumbs-custom-main">
                 <h6 class="breadcrumbs-custom-subtitle title-decorated">{{ this.page.title }}</h6>
                 <h1 class="breadcrumbs-custom-title">{{ this.page.title }}</h1>
             </div>
-            <ul class="breadcrumbs-custom-path">
-                <li><a href="{{ 'home'|page }}">Главная</a></li>
-                <li class="active">{{ this.page.title }}</li>
-            </ul>
+            {% component 'breadcrumbs' %}
         </div>
     </div>
 </section>
+{% endif %}

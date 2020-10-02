@@ -1,4 +1,22 @@
 title = "Блог"
-url = "/blog"
+url = "/blog/:page?"
 layout = "default"
+is_hidden = 0
+child_of = "home"
+hide_crumb = 0
+remove_crumb_trail = 0
+crumb_disabled = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "services"
+postPage = "blogpage"
 ==
+<section class="section-sm">
+    <div class="container">
+        {% partial 'blog/blog-list' %}
+    </div>
+</section>
