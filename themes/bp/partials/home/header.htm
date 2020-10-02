@@ -34,20 +34,7 @@
                     <div class="rd-navbar-nav-wrap" id="rd-navbar-nav-wrap-1">
                         <!-- RD Navbar Brand--><a class="rd-navbar-brand" href="{{ 'home'|page }}"><img src="{{ 'assets/images/logo-default-398x45.png'|theme }}" alt="" width="199" height="22"/></a>
                         <!-- RD Navbar Nav-->
-                        <ul class="rd-navbar-nav">
-                            <li class="rd-nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'home'|page }}">Home</a>
-                            </li>
-                            {% if 'our-founder'|page %}
-                            <li class="rd-nav-item {% if this.page.id == 'our-founder' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'our-founder'|page }}">Our Founder</a>
-                            </li>
-                            {% endif %}
-                            <li class="rd-nav-item {% if this.page.id == 'typography' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'typography'|page }}">Typography</a>
-                            </li>
-                            {% if 'contacts'|page %}
-                            <li class="rd-nav-item {% if this.page.id == 'contacts' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'contacts'|page }}">Contacts</a>
-                            </li>
-                            {% endif %}
-                        </ul>
+                        {% partial 'top-menu' %}
                     </div>
                 </div>
             </div>

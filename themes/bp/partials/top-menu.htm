@@ -1,0 +1,24 @@
+<ul class="rd-navbar-nav">
+    <li class="rd-nav-item {% if this.page.id == 'home' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'home'|page }}">Главная</a>
+    </li>
+    {% if 'about-us'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'about-us' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'about-us'|page }}">О нас</a>
+    </li>
+    {% endif %}
+    {% if 'services'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'services' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'services'|page }}">Услуги</a>
+    </li>
+    {% endif %}
+    {% if 'customers'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'customers' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'customers'|page }}">Клиенты</a>
+    </li>
+    {% endif %}
+    {% if 'contacts'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'contacts' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'contacts'|page }}">Контакты</a>
+    </li>
+    {% endif %}
+    {% if 'blog'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'blog' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'blog'|page }}">Блог</a>
+    </li>
+    {% endif %}
+</ul>
