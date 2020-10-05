@@ -1,0 +1,38 @@
+<form data-request="{{ __SELF__ }}::onFormSubmit" data-request-validate
+      data-request-success="$(this).hide();$('.success-message').show()">
+    <h3 class="wow-outer"><span class="wow slideInDown">Оставьте ваше сообщение</span></h3>
+    <div class="row row-10">
+        {{ form_token() }}
+        <div class="col-md-6 wow-outer">
+            <div class="form-wrap wow fadeSlideInUp form-group">
+                <label class="form-label-outside" for="name">Ваше имя: </label>
+                <input type="text" id="name" name="name" class="form-input">
+                <div data-validate-for="name" class="form-error-outside"></div>
+            </div>
+        </div>
+        <div class="col-md-6 wow-outer">
+            <div class="form-wrap wow fadeSlideInUp form-group">
+                <label class="form-label-outside" for="email">Ваш Email:</label>
+                <input type="text" id="email" name="email" class="form-input">
+                <div data-validate-for="email" class="form-error-outside"></div>
+            </div>
+        </div>
+        <div class="col-12 wow-outer">
+            <div class="form-wrap wow fadeSlideInUp form-group">
+                <label class="form-label-outside" for="message">Ваше сообщение: </label>
+                <textarea class="form-input" id="message" name="message"></textarea>
+                <div data-validate-for="message" class="form-error-outside"></div>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <div class="wow-outer">
+            <button id="simpleContactSubmitButton" type="submit"
+                    class="button button-primary button-winona wow slideInRight">Отправить
+            </button>
+        </div>
+    </div>
+</form>
+<div class="success-message" style="display: none">
+    Сообщение отправлено
+</div>

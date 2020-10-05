@@ -8,13 +8,16 @@ remove_crumb_trail = 0
 crumb_disabled = 0
 
 [genericForm]
-rules[email] = "required|email"
-rules[message] = "required"
 rules[name] = "required"
+rules[message] = "required"
+rules[email] = "required|email"
+rules_messages[required] = "Это поле обязательно для заполнения"
+rules_messages[email] = "Введите корректный Email"
 messages_success = "Your form was successfully submitted"
 messages_errors = "There were errors with your submission"
-inline_errors = "disabled"
-sanitize_data = "disabled"
+inline_errors = "display"
+js_on_error = "console.log('123')"
+sanitize_data = "htmlspecialchars"
 anonymize_ip = "disabled"
 recaptcha_theme = "light"
 recaptcha_type = "image"
@@ -53,8 +56,7 @@ emails_date_format = "Y-m-d"
             <div class="row">
                 <div class="col-lg-9 cell-inner">
                     <div class="section-lg">
-                        <h3 class="wow-outer"><span class="wow slideInDown">Contact Us</span></h3>
-                        {% partial 'contact-form' %}
+                        {% component 'genericForm' %}
                     </div>
                 </div>
             </div>
