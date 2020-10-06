@@ -7,19 +7,12 @@ use Cms\Classes\Theme;
 function onStart()
 {
     $items = [];
-
     $theme_dir = Theme::getActiveTheme()->getDirName();
     $files = File::allFiles(themes_path($theme_dir) . '/assets/images/customers/');
-
     foreach ($files as $item) {
         $items[] = '/' . $item->getFilename();
     }
-
-    rsort($items, SORT_NUMERIC); // Bigest file number first
-// $items = array_slice($items,0,20); // if you want a limit
-
     $this['gallery'] = $items;
-//dd( $items );
 }
 
 ?>
