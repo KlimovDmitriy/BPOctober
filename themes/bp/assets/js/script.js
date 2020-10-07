@@ -995,4 +995,33 @@ $(document).ready(function () {
     $('.box-minimal-title').each(function () {
         $(this).height(maxHeight);
     });
+
+    $().fancybox({
+        selector : '.owl-item:not(.cloned) a',
+        hash   : false,
+        backFocus : false,
+        thumbs : {
+            autoStart : true
+        },
+        buttons : [
+            'zoom',
+            'download',
+            'close'
+        ]
+    });
 })
+// Attach custom click event on cloned elements,
+// trigger click event on corresponding link.
+// ================================================
+$(document).on('click', '.owl-item.cloned a', function(e) {
+    var $slides = $(this)
+        .parent()
+        .siblings('.owl-item:not(.cloned)');
+
+    $slides
+        .eq( ( $(this).attr("data-index") || 0) % $slides.length )
+        .find('a')
+        .trigger("click.fb-start", { $trigger: $(this) });
+
+    return false;
+});
