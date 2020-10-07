@@ -12,7 +12,7 @@
 <table class="record-table m-t-md">
 <?php foreach($record->form_data_arr as $label => $value): ?>
     <tr>
-        <td class="record-label"><?php echo ucwords($label) ?>:</td>
+        <td class="record-label"><?php echo e(trans('martin.forms::lang.controllers.records.'.$label)) ?>:</td>
         <td class="record-value">
         <?php if(is_array($value) || is_object($value)): ?>
             <ul>
