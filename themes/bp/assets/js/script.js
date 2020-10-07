@@ -1001,7 +1001,7 @@ $(document).ready(function () {
         hash   : false,
         backFocus : false,
         thumbs : {
-            autoStart : true
+            autoStart : false
         },
         buttons : [
             'zoom',
