@@ -23,6 +23,7 @@ recaptcha_type = "image"
 recaptcha_size = "normal"
 emails_date_format = "Y-m-d"
 ==
+
 <!-- Баннер-->
 <section class="section section-halfscreen bg-image"
          style="background-image: url(themes/bp/assets/images/header-bg.jpg);">
@@ -48,20 +49,10 @@ emails_date_format = "Y-m-d"
 <section class="section section-lg text-center">
     {% partial 'home/customers' %}
 </section>
-<!-- Форма обратной связи-->
+<!-- Форма обратной связи и карта -->
 <section class="section bg-gray-100">
     <div class="range justify-content-xl-between">
-        <div class="cell-xl-6 align-self-center container">
-            <div class="row">
-                <div class="col-lg-9 cell-inner">
-                    <div class="section-lg">
-                        {% component 'genericForm' %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cell-xl-5 height-fill wow fadeIn">
-            <iframe src="https://yandex.ru/map-widget/v1/-/CCQ3n4FydB" frameborder="0"></iframe>
-        </div>
+        {% partial 'contact-form' %}
+        {% partial 'map' %}
     </div>
 </section>

@@ -6,8 +6,31 @@ child_of = "home"
 hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
+
+[genericForm]
+rules[name] = "required"
+rules[message] = "required"
+rules[email] = "required|email"
+rules_messages[required] = "Это поле обязательно для заполнения"
+rules_messages[email] = "Введите корректный Email"
+messages_success = "Your form was successfully submitted"
+messages_errors = "There were errors with your submission"
+inline_errors = "display"
+sanitize_data = "htmlspecialchars"
+anonymize_ip = "disabled"
+recaptcha_theme = "light"
+recaptcha_type = "image"
+recaptcha_size = "normal"
+emails_date_format = "Y-m-d"
 ==
 <!-- Contacts -->
 <section class="section section-sm">
     {% partial 'contacts/contacts' %}
+</section>
+<!-- Форма обратной связи и карта -->
+<section class="section bg-gray-100">
+    <div class="range justify-content-xl-between">
+        {% partial 'contact-form' %}
+        {% partial 'map' %}
+    </div>
 </section>

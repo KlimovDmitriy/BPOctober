@@ -1,35 +1,9 @@
-<form data-request="{{ genericForm }}::onFormSubmit">
-    <div class="row row-10">
-        {{ form_token() }}
-
-        <div id="{{ genericForm }}_forms_flash"></div>
-
-        <div class="col-md-6 wow-outer">
-            <div class="form-wrap wow fadeSlideInUp">
-                <label class="form-label-outside" for="name">Имя: </label>
-                <input type="text" id="name" name="name" class="form-input">
-            </div>
-        </div>
-
-        <div class="col-md-6 wow-outer">
-            <div class="form-wrap wow fadeSlideInUp">
-                <label class="form-label-outside" for="email">Email:</label>
-                <input type="text" id="email" name="email" class="form-input">
-            </div>
-        </div>
-
-        <div class="col-12 wow-outer">
-            <div class="form-wrap wow fadeSlideInUp">
-                <label class="form-label-outside" for="message">Сообщение: </label>
-                <textarea class="form-input" id="message" name="message"></textarea>
-            </div>
-        </div>
-        <div class="group">
-            <div class="wow-outer">
-                <button id="simpleContactSubmitButton" type="submit"
-                        class="button button-primary button-winona wow slideInRight">Отправить
-                </button>
+<div class="cell-xl-6 align-self-center container">
+    <div class="row">
+        <div class="col-lg-9 cell-inner">
+            <div class="section-lg">
+                {% component 'genericForm' %}
             </div>
         </div>
     </div>
-</form>
+</div>
