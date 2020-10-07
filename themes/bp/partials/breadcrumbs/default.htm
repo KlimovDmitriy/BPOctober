@@ -1,0 +1,42 @@
+{% set crumbOptions = __SELF__.options %}
+{% if currentCrumb.show_crumb %}
+<ol class="{{crumbOptions['main-ol-class']}}" itemscope itemtype="https://schema.org/BreadcrumbList">
+    {% set activeCrumb = '' %}
+    {% set position = 1 %}
+    {% for crumb in breadcrumbs %}
+    {% if crumb.in_crumb_trail %}
+    <li class="{{crumbOptions['main-li-class']}} {% if crumb.crumb_disabled %} {{crumbOptions['disabled-class']}} {% endif %} {% if loop.last %} {{crumbOptions['active-class']}} {% endif %}"
+        {% if loop.last %} id="bcLast" {% endif %} itemprop="itemListElement" itemscope
+        itemtype="https://schema.org/ListItem">
+        {% if not loop.last and not crumb.crumb_disabled %} <a href="{{crumb.baseFileName | page}}" itemprop="item"> {%
+            endif %} <span itemprop="name">{{crumb.title}}</span> {% if not loop.last and not crumb.is_disabled %}</a>
+        {% else %} <a href="{{crumb.baseFileName | page}}" itemprop="item"></a> {%
+        endif %}
+        <meta itemprop="position" content="{{position}}"/>
+        {% if not loop.last and not crumb.is_disabled %}
+            {% set position = position + 1 %}
+        {% endif %}
+    </li>
+    {% endif %}
+
+    {% if loop.last %}
+    {% set activeCrumb = crumb %}
+    {% endif %}
+
+    {% endfor %}
+</ol>
+{% endif %}
+
+{# javascript to enable dynamic breadcrumbs. Helpful for ':slug' type routes #}
+{% if activeCrumb.elementTitle %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var bcTitle = document.getElementById('{{activeCrumb.elementTitle}}');
+        var bcActive = document.getElementById('bcLast');
+        bcTitle = '<span itemprop="name">' + bcTitle.innerHTML + '</span><a href="{{crumb.baseFileName | page}}" itemprop="item"></a><meta itemprop="position" content="{{position}}"/>';
+        if (bcTitle) {
+            bcActive.innerHTML = bcTitle;
+        }
+    });
+</script>
+{% endif %}
