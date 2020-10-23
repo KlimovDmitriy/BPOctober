@@ -6,4 +6,17 @@ child_of = "home"
 hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 5
+categoryFilter = "uslugi"
+noPostsMessage = "No posts found"
+sortOrder = "sort asc"
+postPage = "servicepage"
 ==
+<section class="section-sm">
+    <div class="container">
+        {% partial 'services/services-list' %}
+    </div>
+</section>

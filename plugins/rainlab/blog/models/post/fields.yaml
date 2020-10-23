@@ -22,6 +22,7 @@ fields:
         path: post_toolbar
         cssClass: collapse-visible
 
+
 secondaryTabs:
     stretch: true
     fields:
@@ -63,6 +64,17 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
+
+        sort:
+            tab: rainlab.blog::lang.post.tab_manage
+            label: rainlab.blog::lang.post.sort
+            span: right
+
+        favorite:
+            tab: rainlab.blog::lang.post.tab_manage
+            label: rainlab.blog::lang.post.favorite
+            span: left
+            type: checkbox
 
         excerpt:
             tab: rainlab.blog::lang.post.tab_manage

@@ -73,7 +73,9 @@ class Post extends Model
         'updated_at desc'   => 'rainlab.blog::lang.sorting.updated_desc',
         'published_at asc'  => 'rainlab.blog::lang.sorting.published_asc',
         'published_at desc' => 'rainlab.blog::lang.sorting.published_desc',
-        'random'            => 'rainlab.blog::lang.sorting.random'
+        'random'            => 'rainlab.blog::lang.sorting.random',
+        'sort asc'  => 'rainlab.blog::lang.sorting.sort_asc',
+        'sort desc' => 'rainlab.blog::lang.sorting.sort_desc',
     ];
 
     /*
