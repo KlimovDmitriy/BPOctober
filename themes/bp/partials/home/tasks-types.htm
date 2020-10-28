@@ -1,17 +1,16 @@
 description="Tasks Block"
-[blogCategories]
 [blogPosts]
 categoryFilter = "uslugi"
 postPage = "service-page"
 sortOrder = "sort asc"
 ==
+{% set categoriesSlug = ['dlya-kogo','boli-klienta'] %}
 <div class="container">
     <h3 class="wow-outer"><span class="wow slideInDown"><a href="services">Какие виды задач мы решаем</a></span>
     </h3>
     <div class="row row-30">
-        {% set categoriesSlug = ['dlya-kogo','boli-klienta'] %}
         {% for post in blogPosts.posts %}
-        {% if post.categories.0.slug in categoriesSlug and post.favorite %}
+        {% if post.categories.0.slug in categoriesSlug and post.favorite and post.published %}
         <div class="col-sm-6 col-md-4 col-lg-3 wow-outer">
             <!-- Post Tiny-->
             <article class="post-tiny wow fadeSlideInDown">
