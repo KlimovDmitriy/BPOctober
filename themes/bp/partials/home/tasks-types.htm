@@ -1,0 +1,32 @@
+description="Tasks Block"
+[blogCategories]
+[blogPosts]
+categoryFilter = "uslugi"
+postPage = "service-page"
+sortOrder = "sort asc"
+==
+<div class="container">
+    <h3 class="wow-outer"><span class="wow slideInDown"><a href="services">Какие виды задач мы решаем</a></span>
+    </h3>
+    <div class="row row-30">
+        {% set categoriesSlug = ['dlya-kogo','boli-klienta'] %}
+        {% for post in blogPosts.posts %}
+        {% if post.categories.0.slug in categoriesSlug and post.favorite %}
+        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer">
+            <!-- Post Tiny-->
+            <article class="post-tiny wow fadeSlideInDown">
+                {% for image in post.featured_images|slice(0, 1) %}
+                <a class="post-tiny-media" href="{{ post.url }}"><img src="{{ image.path }}" alt="" width="270"
+                                                                      height="184"/></a>
+                {% endfor %}
+                <h5 class="post-tiny-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+            </article>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+<!--<pre>{{blogPosts.category.getChildren}}</pre>-->
+<!--{% for category in blogPosts.category.getChildren %}-->
+<!--{{category.name}}-->
+<!--{% endfor %}-->

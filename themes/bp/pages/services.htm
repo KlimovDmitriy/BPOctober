@@ -7,52 +7,17 @@ hide_crumb = 0
 remove_crumb_trail = 0
 crumb_disabled = 0
 
-[blogPosts bk]
-categoryFilter = "boli-klienta"
-sortOrder = "sort asc"
-postPage = "service-page"
-
-[blogPosts dk]
-categoryFilter = "dlya-kogo"
-sortOrder = "sort asc"
-postPage = "service-page"
+[blogCategories]
 ==
 <section class="section section-lg text-center">
     <div class="container">
-
-        {% if not category %}
-        <h1>Category not found</h1>
-        {% else %}
-        <h3 class="wow-outer"><span class="wow slideInDown">{{ bk.category.name }}</span></h3>
-        <div class="row row-30">
-            {% for post in bk.posts %}
-
-            {% partial "blog/list-single" post=post %}
-
-            {% else %}
-
-            <div class="no-data">{{ noPostsMessage }}</div>
-            {% endfor %}
-
+        {% for category in blogCategories.categories %}
+            {% if category.slug == "uslugi" %}
+                {% for categoryChild in category.children %}
+                    <h3 class="wow-outer"><span class="wow slideInDown">{{categoryChild.name}}</span></h3>
+                    {% partial "services/services-list" filter=categoryChild.slug %}
+                {% endfor %}
             {% endif %}
-        </div>
-
-        {% if not category %}
-        <h1>Category not found</h1>
-        {% else %}
-        <h3 class="wow-outer"><span class="wow slideInDown">{{ dk.category.name }}</span></h3>
-        <div class="row row-30">
-            {% for post in dk.posts %}
-
-            {% partial "blog/list-single" post=post %}
-
-            {% else %}
-
-            <div class="no-data">{{ noPostsMessage }}</div>
-
-            {% endfor %}
-
-            {% endif %}
-
-        </div>
+        {% endfor %}
+    </div>
 </section>

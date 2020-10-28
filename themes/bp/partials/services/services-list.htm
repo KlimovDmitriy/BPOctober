@@ -1,3 +1,9 @@
+description = "Render services list"
+[blogPosts]
+categoryFilter = {{filter}}
+sortOrder = "sort asc"
+postPage = "service-page"
+==
 {% set posts = blogPosts.posts %}
 <div class="row row-30">
     {% for post in posts %}
@@ -10,7 +16,5 @@
             <h5 class="post-tiny-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
         </article>
     </div>
-    {% else %}
-    <li class="no-data">{{ __SELF__.noPostsMessage }}</li>
     {% endfor %}
 </div>

@@ -1,60 +1,60 @@
 description="Technology Block"
-==
-<?php
-/*
-use Cms\Classes\Theme;
-
-function onStart()
-{
-    $items = [];
-    $theme_dir = Theme::getActiveTheme()->getDirName();
-    $files = File::allFiles(themes_path($theme_dir) . '/assets/images/technology/');
-    foreach ($files as $item) {
-        $items[] = '/' . $item->getFilename();
-    }
-    $this['gallery'] = $items;
-}
-*/
-?>
+[blogPosts]
+categoryFilter = 's-chem-my-rabotaem'
+postPage = "service-page"
+sortOrder = "sort asc"
 ==
 <div class="container">
-    <h3 class="wow-outer"><span class="wow slideInDown">Технологии, в которых мы эксперты</span></h3>
+    <h3 class="wow-outer"><span class="wow slideInDown"><a href="services">Технологии, в которых мы эксперты</a></span></h3>
     <div class="row row-30">
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/640px-PHP-logo.svg.png'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/yii_logo_light.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Logo-composer-transparent.png'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Unofficial_JavaScript_logo_2.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Go_Logo_Blue.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Symfony2.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Git-logo.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/CSS3_logo_and_wordmark.png'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Mysql.png'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/1c-bitrix_logo.jpg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/Docker_(container_engine)_logo.svg'|theme }}" alt="" height="150"/>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">
-            <img src="{{ 'assets/images/technology/HTML5_logo_and_wordmark.png'|theme }}" alt="" height="150"/>
-        </div>
+        {% for post in blogPosts.posts %}
+            {% if post.favorite %}
+                <div class="col-sm-6 col-md-4 col-lg-3 wow-outer">
+                    <!-- Post Tiny-->
+                    <article class="post-tiny wow fadeSlideInDown">
+                        {% for image in post.featured_images|slice(0, 1) %}
+                        <a class="post-tiny-media" href="{{ post.url }}"><img src="{{ image.path }}" alt="" width="270" height="184"/></a>
+                        {% endfor %}
+                        <h5 class="post-tiny-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+                    </article>
+                </div>
+            {% endif %}
+        {% endfor %}
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/640px-PHP-logo.svg.png'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/yii_logo_light.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Logo-composer-transparent.png'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Unofficial_JavaScript_logo_2.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Go_Logo_Blue.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Symfony2.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Git-logo.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/CSS3_logo_and_wordmark.png'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Mysql.png'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/1c-bitrix_logo.jpg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/Docker_(container_engine)_logo.svg'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
+<!--        <div class="col-sm-6 col-md-4 col-lg-3 wow-outer d-flex flex-wrap align-items-center justify-content-center">-->
+<!--            <img src="{{ 'assets/images/technology/HTML5_logo_and_wordmark.png'|theme }}" alt="" height="150"/>-->
+<!--        </div>-->
     </div>
 </div>
