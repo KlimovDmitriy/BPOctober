@@ -9,6 +9,10 @@
     <li class="rd-nav-item {% if this.page.id == 'services' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'services'|page }}">Услуги</a>
     </li>
     {% endif %}
+    {% if 'cases'|page %}
+    <li class="rd-nav-item {% if this.page.id == 'services' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'cases'|page }}">Кейсы</a>
+    </li>
+    {% endif %}
     {% if 'customers'|page %}
     <li class="rd-nav-item {% if this.page.id == 'customers' %}active{% endif %}"><a class="rd-nav-link" href="{{ 'customers'|page }}">Клиенты</a>
     </li>

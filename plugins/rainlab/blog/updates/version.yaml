@@ -64,3 +64,15 @@
 1.4.5:
     - 'Create favorite service column in blog posts table'
     - create_favorite_service_column.php
+1.4.6:
+    - 'Created table rainlab_blog_related_post'
+    - builder_table_create_rainlab_blog_related_post.php
+1.4.7:
+    - 'Updated table rainlab_blog_posts'
+    - builder_table_update_rainlab_blog_posts.php
+1.4.8:
+    - 'Updated table rainlab_blog_posts'
+    - builder_table_update_rainlab_blog_posts_2.php
+1.4.9:
+    - 'Updated table rainlab_blog_posts'
+    - builder_table_update_rainlab_blog_posts_3.php

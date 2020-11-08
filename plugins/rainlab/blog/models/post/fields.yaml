@@ -1,61 +1,50 @@
-# ===================================
-#  Field Definitions
-# ===================================
-
 fields:
-
     title:
-        label: rainlab.blog::lang.post.title
+        label: 'rainlab.blog::lang.post.title'
         span: left
-        placeholder: rainlab.blog::lang.post.title_placeholder
-
+        placeholder: 'rainlab.blog::lang.post.title_placeholder'
+        type: text
     slug:
-        label: rainlab.blog::lang.post.slug
+        label: 'rainlab.blog::lang.post.slug'
         span: right
-        placeholder: rainlab.blog::lang.post.slug_placeholder
+        placeholder: 'rainlab.blog::lang.post.slug_placeholder'
         preset:
             field: title
             type: slug
-
+        type: text
     toolbar:
         type: partial
         path: post_toolbar
         cssClass: collapse-visible
-
-
 secondaryTabs:
-    stretch: true
     fields:
         content:
-            tab: rainlab.blog::lang.post.tab_edit
+            tab: 'rainlab.blog::lang.post.tab_edit'
             type: RainLab\Blog\FormWidgets\BlogMarkdown
-            cssClass: field-slim blog-post-preview
+            cssClass: 'field-slim blog-post-preview'
             stretch: true
             mode: split
-
         categories:
-            tab: rainlab.blog::lang.post.tab_categories
+            tab: 'rainlab.blog::lang.post.tab_categories'
             type: relation
-            commentAbove: rainlab.blog::lang.post.categories_comment
-            placeholder: rainlab.blog::lang.post.categories_placeholder
-
+            commentAbove: 'rainlab.blog::lang.post.categories_comment'
+            placeholder: 'rainlab.blog::lang.post.categories_placeholder'
         published:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published'
             span: left
             type: checkbox
-
         user:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_by
+            label: 'rainlab.blog::lang.post.published_by'
+            nameFrom: login
+            descriptionFrom: description
+            emptyOption: 'rainlab.blog::lang.post.current_user'
             span: right
             type: relation
-            nameFrom: login
-            emptyOption: rainlab.blog::lang.post.current_user
-
+            tab: 'rainlab.blog::lang.post.tab_manage'
         published_at:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.published_on
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.published_on'
             span: left
             cssClass: checkbox-align
             type: datepicker
@@ -64,28 +53,53 @@ secondaryTabs:
                 action: enable
                 field: published
                 condition: checked
-
-        sort:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.sort
+        sorting:
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.sort'
             span: right
-
+            type: text
         favorite:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.favorite
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.favorite'
             span: left
             type: checkbox
-
         excerpt:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.excerpt
-            type: textarea
+            label: 'rainlab.blog::lang.post.excerpt'
             size: small
-
+            span: full
+            type: textarea
+            tab: 'rainlab.blog::lang.post.tab_manage'
         featured_images:
-            tab: rainlab.blog::lang.post.tab_manage
-            label: rainlab.blog::lang.post.featured_images
+            tab: 'rainlab.blog::lang.post.tab_manage'
+            label: 'rainlab.blog::lang.post.featured_images'
             type: fileupload
             mode: image
             imageWidth: 200
             imageHeight: 200
+        data:
+            label: Repeater
+            prompt: 'Add new item'
+            span: auto
+            type: repeater
+            tab: Кейсы
+            form:
+                fields:
+                    service:
+                        keyFrom: slug
+                        label: 'Record finder'
+                        nameFrom: title
+                        descriptionFrom: description
+                        list: ~/plugins/rainlab/blog/models/post/columns.yaml
+                        span: auto
+                        type: recordfinder
+                        useRelation: false
+                        modelClass: RainLab\Blog\Models\Post
+                    weight:
+                        label: 'Вес услуги'
+                        span: auto
+                        type: number
+        client:
+            label: Клиент
+            span: auto
+            type: text
+            tab: Кейсы

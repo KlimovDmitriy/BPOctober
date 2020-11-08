@@ -52,7 +52,7 @@ class Post extends Model
     /**
      * @var array Attributes to be stored as JSON
      */
-    protected $jsonable = ['metadata'];
+    protected $jsonable = ['metadata', 'data'];
 
     /**
      * The attributes that should be mutated to dates.
@@ -74,8 +74,8 @@ class Post extends Model
         'published_at asc'  => 'rainlab.blog::lang.sorting.published_asc',
         'published_at desc' => 'rainlab.blog::lang.sorting.published_desc',
         'random'            => 'rainlab.blog::lang.sorting.random',
-        'sort asc'  => 'rainlab.blog::lang.sorting.sort_asc',
-        'sort desc' => 'rainlab.blog::lang.sorting.sort_desc',
+        'sorting asc'  => 'rainlab.blog::lang.sorting.sort_asc',
+        'sorting desc' => 'rainlab.blog::lang.sorting.sort_desc',
     ];
 
     /*
