@@ -76,7 +76,7 @@ secondaryTabs:
             mode: image
             imageWidth: 200
             imageHeight: 200
-        data:
+        related_services:
             label: Repeater
             prompt: 'Add new item'
             span: auto
@@ -85,15 +85,12 @@ secondaryTabs:
             form:
                 fields:
                     service:
-                        keyFrom: slug
                         label: 'Record finder'
                         nameFrom: title
                         descriptionFrom: description
                         list: ~/plugins/rainlab/blog/models/post/columns.yaml
                         span: auto
                         type: recordfinder
-                        useRelation: false
-                        modelClass: RainLab\Blog\Models\Post
                     weight:
                         label: 'Вес услуги'
                         span: auto

@@ -10,46 +10,7 @@ crumb_disabled = 0
 [blogPosts]
 categoryFilter = "cases"
 sortOrder = "sorting asc"
+postPage = "case-page"
 
 ==
-{% set posts = blogPosts.posts %}
-<section class="section section-md">
-    {% for post in posts %}
-    <div class="container">
-        <!-- Profile Modern-->
-        <article class="profile-modern">
-            <div class="profile-modern-figure"><img class="profile-modern-image"
-                                                    src="{{'assets/images/team-1-336x336.jpg'|theme}}" alt=""
-                                                    width="336"
-                                                    height="336"/>
-            </div>
-            <div class="profile-modern-main">
-                <div class="profile-modern-header">
-                    <div class="profile-modern-header-item">
-                        <h3>{{post.title}}</h3>
-                        <p>Основатель, генеральный директор</p>
-                    </div>
-                </div>
-                <div class="row row-30">
-                    <div class="col-lg-6">
-                        {{post.excerpt | raw}}
-                    </div>
-                    <div class="col-lg-6">
-                        {% for service in post.data %}
-                        {{dump(service)}}
-                        <article class="progress-linear">
-                            <div class="progress-header">
-                                <p>Consulting</p><span class="progress-value">{{service.weight}}</span>
-                            </div>
-                            <div class="progress-bar-linear-wrap">
-                                <div class="progress-bar-linear"></div>
-                            </div>
-                        </article>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </article>
-    </div>
-    {% endfor %}
-</section>
+{% partial 'cases/cases-list' %}

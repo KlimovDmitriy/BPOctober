@@ -1,8 +1,13 @@
-description="Tasks Block"
+description = "Блок Задачи на Главной"
+
 [blogPosts]
+pageNumber = "{{ :page }}"
 categoryFilter = "uslugi"
-postPage = "service-page"
+postsPerPage = 10
+noPostsMessage = "Записей не найдено"
 sortOrder = "sort asc"
+categoryPage = "blog/category"
+postPage = "service-page"
 ==
 {% set categoriesSlug = ['dlya-kogo','boli-klienta'] %}
 <div class="container">
@@ -14,10 +19,15 @@ sortOrder = "sort asc"
         <div class="col-sm-6 col-md-4 col-lg-3 wow-outer">
             <!-- Post Tiny-->
             <article class="post-tiny wow fadeSlideInDown">
+                {% if post.featured_images|length > 0 %}
                 {% for image in post.featured_images|slice(0, 1) %}
                 <a class="post-tiny-media" href="{{ post.url }}"><img src="{{ image.path }}" alt="" width="270"
                                                                       height="184"/></a>
                 {% endfor %}
+                {% else %}
+                <a class="post-tiny-media" href="{{ post.url }}"><img
+                            src="{{'assets/images/blog-layouts-1-270x184.jpg'|theme}}" alt="" width="270" height="184"/></a>
+                {% endif %}
                 <h5 class="post-tiny-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
             </article>
         </div>

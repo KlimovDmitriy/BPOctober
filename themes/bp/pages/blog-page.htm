@@ -1,4 +1,4 @@
-title = "Blog Post"
+title = "Запись блога"
 url = "/blog/post/:slug"
 layout = "default"
 is_hidden = 0
@@ -10,7 +10,6 @@ crumb_disabled = 0
 
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "blog/category"
 ==
 <?php
 function onEnd()
@@ -24,11 +23,10 @@ function onEnd()
 <section class="section-sm">
     <div class="container">
         {% if post %}
-        <h2 id="post-title">{{ post.title }}</h2>
-
-        {% partial 'blog/blog-post' %}
+            <h2 id="post-title">{{ post.title }}</h2>
+            {% partial 'blog/blog-post' %}
         {% else %}
-        <h2>Post not found</h2>
+            <h2>Post not found</h2>
         {% endif %}
     </div>
 </section>

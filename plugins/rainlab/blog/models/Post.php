@@ -52,7 +52,7 @@ class Post extends Model
     /**
      * @var array Attributes to be stored as JSON
      */
-    protected $jsonable = ['metadata', 'data'];
+    protected $jsonable = ['metadata', 'related_services'];
 
     /**
      * The attributes that should be mutated to dates.
