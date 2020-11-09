@@ -82,7 +82,8 @@ class Post extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => ['Backend\Models\User']
+        'user' => ['Backend\Models\User'],
+        'service' => ['RainLab\Blog\Models\Post']
     ];
 
     public $belongsToMany = [

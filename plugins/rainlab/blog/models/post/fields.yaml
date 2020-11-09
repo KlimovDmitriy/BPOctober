@@ -85,12 +85,15 @@ secondaryTabs:
             form:
                 fields:
                     service:
+                        keyFrom: slug
                         label: 'Record finder'
                         nameFrom: title
                         descriptionFrom: description
                         list: ~/plugins/rainlab/blog/models/post/columns.yaml
                         span: auto
                         type: recordfinder
+                        useRelation: false
+                        modelClass: RainLab\Blog\Models\Post
                     weight:
                         label: 'Вес услуги'
                         span: auto
