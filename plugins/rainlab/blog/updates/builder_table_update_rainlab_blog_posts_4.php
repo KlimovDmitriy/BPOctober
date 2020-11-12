@@ -9,7 +9,6 @@ class BuilderTableUpdateRainlabBlogPosts4 extends Migration
     {
         Schema::table('rainlab_blog_posts', function($table)
         {
-            
             $table->renameColumn('data', 'related_services');
         });
     }
