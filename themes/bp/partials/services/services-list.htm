@@ -12,19 +12,24 @@ postPage = "service-page"
 {% set posts = blogPosts.posts %}
 <div class="row row-30">
     {% for post in posts %}
+    {% if post.show_detail %}
+        {% set postUrl= "href="~post.url %}
+    {% else %}
+        {% set postUrl="" %}
+    {% endif %}
     <div class="col-sm-6 col-md-4 col-lg-3 wow-outer">
         <!-- Post Tiny-->
         <article class="post-tiny wow fadeSlideInDown">
             {% if post.featured_images|length > 0 %}
                 {% for image in post.featured_images|slice(0, 1) %}
-                    <a class="post-tiny-media" href="{{ post.url }}"><img src="{{ image.path }}" alt="" width="270"
+                    <a class="post-tiny-media" "{{ postUrl }}><img src="{{ image.path }}" alt="" width="270"
                                                                           height="184"/></a>
                 {% endfor %}
             {% else %}
-                <a class="post-tiny-media" href="{{ post.url }}"><img
+                <a class="post-tiny-media" {{ postUrl }}><img
                             src="{{'assets/images/blog-layouts-1-270x184.jpg'|theme}}" alt="" width="270" height="184"/></a>
             {% endif %}
-            <h5 class="post-tiny-title"><a href="{{ post.url }}">{{ post.title }}</a></h5>
+            <h5 class="post-tiny-title"><a {{ postUrl }}>{{ post.title }}</a></h5>
         </article>
     </div>
     {% endfor %}

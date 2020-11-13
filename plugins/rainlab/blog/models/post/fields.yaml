@@ -103,3 +103,9 @@ secondaryTabs:
             span: auto
             type: text
             tab: Кейсы
+        show_detail:
+            label: 'Отображать детальную страницу'
+            span: auto
+            default: 1
+            type: checkbox
+            tab: Услуги
