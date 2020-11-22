@@ -77,5 +77,11 @@
     - 'Updated table rainlab_blog_posts'
     - builder_table_update_rainlab_blog_posts_3.php
 1.4.10:
+    - 'Drop table rainlab_blog_related_post'
+    - builder_table_delete_rainlab_blog_related_post.php
+1.4.11:
     - 'Updated table rainlab_blog_posts'
-    - builder_table_update_rainlab_blog_posts_4.php
+    - builder_table_update_rainlab_blog_posts4.php
+1.4.12:
+    - 'Updated table rainlab_blog_posts'
+    - builder_table_update_rainlab_blog_posts5.php
