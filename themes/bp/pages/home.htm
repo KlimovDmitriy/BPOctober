@@ -11,6 +11,7 @@ crumb_disabled = 0
 rules[name] = "required"
 rules[message] = "required"
 rules[email] = "required|email"
+rules[agreement] = "required"
 rules_messages[required] = "Это поле обязательно для заполнения"
 rules_messages[email] = "Введите корректный Email"
 messages_success = "Your form was successfully submitted"
@@ -55,7 +56,7 @@ idGallery = "customers"
 <!-- Форма обратной связи и карта -->
 <section class="section bg-gray-100">
     <div class="range justify-content-xl-between" style="min-height: 500px" id="contact-form">
-        {% partial 'contact-form' %}
+        {% partial 'contact-form' title="Запросить коммерческое предложение" subtitle="Напишите, какая задача стоит перед Вами, чтобы мы могли подготовить предложение или презентацию для Вас" %}
         {% partial 'map' %}
     </div>
 </section>

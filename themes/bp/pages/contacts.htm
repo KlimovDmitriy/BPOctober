@@ -11,6 +11,7 @@ crumb_disabled = 0
 rules[name] = "required"
 rules[message] = "required"
 rules[email] = "required|email"
+rules[agreement] = "required"
 rules_messages[required] = "Это поле обязательно для заполнения"
 rules_messages[email] = "Введите корректный Email"
 messages_success = "Your form was successfully submitted"
@@ -30,7 +31,7 @@ emails_date_format = "Y-m-d"
 <!-- Форма обратной связи и карта -->
 <section class="section bg-gray-100">
     <div class="range justify-content-xl-between" style="min-height: 500px">
-        {% partial 'contact-form' %}
+        {% partial 'contact-form' title="Задать нам вопрос или получить предложение" subtitle="Мы будем рады подготовить для Вас предложение, отправить презентацию или посоветовать, как решить Ваш вопрос." %}
         {% partial 'map' %}
     </div>
 </section>

@@ -1,6 +1,7 @@
 <form data-request="{{ __SELF__ }}::onFormSubmit" data-request-validate
       data-request-success="$(this).hide();$('.success-message').show()">
-    <h3 class="wow-outer"><span class="wow slideInDown">Оставьте ваше сообщение</span></h3>
+    <h3 class="wow-outer"><span class="wow slideInDown">{{title}}</span></h3>
+    <p>{{subtitle}}</p>
     <div class="row row-10">
         {{ form_token() }}
         <div class="col-md-6 wow-outer">
@@ -22,6 +23,12 @@
                 <label class="form-label-outside" for="message">Чем мы можем быть полезны?</label>
                 <textarea class="form-input" id="message" name="message"></textarea>
                 <div data-validate-for="message" class="form-error-outside"></div>
+            </div>
+        </div>
+        <div class="col-12 wow-outer">
+            <div class="form-wrap wow fadeSlideInUp form-group">
+                <input name="agreement" type="checkbox" id="agreement"style="margin-right: 10px"/><a href="{{ 'agreement.pdf'| media }}">Согласен с соглашением о пользовании сайтом и обработке персональных данных</a>
+                <div data-validate-for="agreement" class="form-error-outside"></div>
             </div>
         </div>
     </div>
