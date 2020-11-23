@@ -1032,3 +1032,10 @@ $("#toform").on("click", function (event) {
         top = $(id).offset().top;
     $('body,html').animate({scrollTop: top}, 1500);
 });
+$(document).ready(function (){
+    $(".popup-form").fancybox({
+        autoFocus: false,
+        touch: false,
+    });
+})
+

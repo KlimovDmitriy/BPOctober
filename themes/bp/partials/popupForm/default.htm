@@ -1,0 +1,53 @@
+<div style="display: none">
+    <div class="cell-xl-6 align-self-center container">
+        <div class="row">
+            <div class="col-lg-9 cell-inner">
+                <div class="section-lg">
+                    <div class="popup" id="popup-form">
+                        <form data-request="{{__SELF__}}::onFormSubmit" data-request-validate
+                              data-request-success="$(this).hide();$('.success-message').show();setTimeout(function(){ $.fancybox.close(); }, 5000);">
+                            <h3 class="wow-outer"><span class="wow slideInDown">Оставьте свой контакт и мы свяжемся с Вами в ближайшее время</span></h3>
+                            <div class="row row-10">
+                                {{ form_token() }}
+                                <div class="col-md-6 wow-outer">
+                                    <div class="form-wrap wow fadeSlideInUp form-group">
+                                        <label class="form-label-outside" for="popup-name">Ваше имя:</label>
+                                        <input type="text" id="popup-name" name="name" class="form-input">
+                                        <div data-validate-for="name" class="form-error-outside"></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 wow-outer">
+                                    <div class="form-wrap wow fadeSlideInUp form-group">
+                                        <label class="form-label-outside" for="popup-phone">Ваш Телефон:</label>
+                                        <input type="text" id="popup-phone" name="phone" class="form-input">
+                                        <div data-validate-for="phone" class="form-error-outside"></div>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow-outer">
+                                    <div class="form-wrap wow fadeSlideInUp form-group">
+                                        <input name="agreement" type="checkbox" id="agreement"
+                                               style="margin-right: 10px"/><a
+                                            href="{{ 'agreement.pdf'| media }}">Согласен с соглашением о пользовании
+                                        сайтом и обработке
+                                        персональных данных</a>
+                                        <div data-validate-for="agreement" class="form-error-outside"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="wow-outer">
+                                    <button id="simpleContactSubmitButton" type="submit"
+                                            class="button button-primary button-winona wow slideInRight">Отправить
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        <div class="success-message" style="display: none">
+                            Сообщение отправлено
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

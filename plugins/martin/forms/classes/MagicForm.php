@@ -176,7 +176,7 @@ abstract class MagicForm extends ComponentBase
         }
 
         // REMOVE EXTRA FIELDS FROM STORED DATA
-        unset($post['_token'], $post['g-recaptcha-response'], $post['_session_key'], $post['_uploader']);
+        unset($post['_token'], $post['g-recaptcha-response'], $post['_session_key'], $post['_uploader'], $post['agreement']);
 
         // FIRE BEFORE SAVE EVENT
         Event::fire('martin.forms.beforeSaveRecord', [&$post, $this]);

@@ -21,6 +21,7 @@ return [
             'error' => 'Запись не найдена',
             'deleted' => 'Запись успешно удалена',
             'name' => 'Имя',
+            'phone' => 'Телефон',
             'email' => 'Email',
             'message' => 'Сообщение',
             'columns' => [
